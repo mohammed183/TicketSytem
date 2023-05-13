@@ -1,0 +1,35 @@
+{
+  "name": "Tickety",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammed183/TicketSytem.git"
+  },
+  "author": "Mohamed Saeed, Ahmed Falah, Kyrillos Gayed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammed183/TicketSytemissues"
+  },
+  "homepage": "https://github.com/mohammed183/TicketSytem#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "chalk": "^5.1.2",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "file-system": "^1.2.2",
+    "hex-color-to-color-name": "^1.0.2",
+    "md5": "^2.3.0",
+    "mysql": "^2.18.1",
+    "serve-favicon": "^2.5.0",
+    "url": "^0.11.0"
+  }
+}
