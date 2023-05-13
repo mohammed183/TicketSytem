@@ -1,0 +1,77 @@
+<%- include("../header") -%>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/view.css" type="text/css">
+    <title>overview</title>
+    </head>
+
+    <body>
+        <div class="content view">
+            <% if(admin_session){ %>
+                <a href="control" class="button">Home</a>
+                <form action="ticketAction" method="post" style="float: right;">
+                    <input type="hidden" name="ticket_id" value="<%= ticket[0].id %>">
+                    <input type="submit" name="resolve" value="resolved" style="background-color:rgb(0, 133, 0)">
+                    <% if (ticket[0].assignee) { %>
+                    <% } else { %>
+                    <input type="submit" name="assign" value="Assign" style="background-color:rgb(0, 0, 133)">
+                    <% } %>
+                    <% }else {%>
+                        <a href="main" class="button">Home</a>
+                        <% } %>
+
+
+                </form>
+                <h1>
+                    <%= ticket[0].title %>
+                </h1>
+
+
+                <div class="ticket">
+                    <p class="created">
+                        <%= ticket[0].created %>
+                    </p>
+                    <h3 class="msg">
+                        <%= ticket[0].msg %>
+                    </h3>
+                </div>
+
+                <div class="comments">
+                    <% if(ticket[0].comment){ %>
+                    <% for(var i=0;i<ticket.length;i++) {%>
+                        <div class="comment">
+                            <p>
+                                    <% if(ticket[i].role == 'User') {%>
+                                        <span style="background-color: rgb(0, 150, 0);color: white;width: fit-content;display:inline;border-radius: 10px;">
+                                    
+                                    <% } else if(ticket[i].role == 'Admin') {%>
+                                        <span style="background-color: rgb(150, 0, 0);color: white;width: fit-content;display:inline;border-radius: 10px;">
+                                    
+                                    <% } else if(ticket[i].role == 'Developer') {%>
+                                        <span style="background-color: rgb(0, 0, 0);color: white;width: fit-content;display:inline; border-radius: 10px;">
+                                    <%} %>
+                                    (<%= ticket[i].role %>)
+                                                    </span>
+                                                    &nbsp;<%= ticket[i].owner %>
+                                                            <span>
+                                                                <%= ticket[i].com_created.toLocaleString() %>
+                                                            </span>
+                                                            <%= ticket[i].comment %>
+                            </p>
+                        </div>
+                        <hr style="max-width: 50%;margin: 0; ">
+                        <% } %>
+                        <% } %>
+                            <form action="comment" method="post">
+                                <textarea name="comment" placeholder="Enter your comment..."></textarea>
+                                <input type="hidden" class="input_field" name="ticket_id"
+                                    value="<%= ticket[0].id %>">
+                                <input type="hidden" class="input_field" name="comment_owner"
+                                    value="<%= login_user_name %>">
+                                <input type="submit" value="Post Comment">
+                            </form>
+                </div>
+        </div>
+
+
+    </body>

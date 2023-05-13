@@ -1,0 +1,57 @@
+<%- include("control", {role: role}) %>
+
+            <!-- <link rel="stylesheet" href="../css/filters.css" type="text/css"> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>All Developers</h2>
+                </div>
+            </div>
+            <hr />
+
+
+
+
+            <div class="table-responsive">
+                <div style="overflow: scroll; height: 430px;">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="bg-color-red">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i < allDev.length; i++){ %>
+                                <tr>
+                                    <th>
+                                        <%= i+1 %>
+                                    </th>
+                                    <th>
+                                        <%= allDev[i].name %>
+                                    </th>
+                                    <th>
+                                        <%= allDev[i].email %>
+                                    </th>
+                                    <th>
+                                        <%= allDev[i].role %>
+                                    </th>
+
+                                    </th>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <form action="/admin" method="post">
+                <div class="orange-button">
+                    <button name="control_btn" value="add_dev" type="submit"
+                        class="btn btn-danger square-btn">Add</button>
+                </div>
+            </form>
+
+            </div>
+            </div>
+            <%- include("control_footer") %>

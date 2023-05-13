@@ -1,0 +1,23 @@
+<%- include("../header") -%>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/add_ticket.css" type="text/css">
+    <title>Add ticket</title>
+    </head>
+
+    <body>
+        <div class="content view">
+            <a href="main" class="button">Home</a>
+            
+            <h2>Create Ticket</h2>
+            <form action="addTicket" method="post">
+                <label for="title">Title</label>
+                <input type="text" name="title" placeholder="Title" id="title" required>
+                <label for="msg">Message</label>
+                <textarea name="msg" placeholder="Enter your message here..." id="msg" required></textarea>
+                <input type="submit" value="Create Ticket">
+            </form>
+        </div>
+
+
+    </body>

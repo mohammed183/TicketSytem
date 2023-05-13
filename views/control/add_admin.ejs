@@ -1,0 +1,25 @@
+<%- include("control", {role: role}) %>
+
+
+            <h2>Add a new Admin</h2>
+            <hr />
+
+            <form action="/add" method="post">
+                <div class="add panel-back">
+                    <h4>Name</h4>
+                    <input type="text" class="input_field" name="name" required>
+                    <h4>Email</h4>
+                    <input type="text" class="input_field" name="email" required>
+                    <h4>Password</h4>
+                    <input type="text" class="input_field" name="password" required>
+                    <select name="role" class="input_field">
+                        <option value="Developer">Developer</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+
+                    <div class="orange-button">
+                        <button name="control_btn" value="add_dev" type="submit"
+                            class="btn btn-danger square-btn">Done</button>
+                    </div>
+            </form>
+            </div>

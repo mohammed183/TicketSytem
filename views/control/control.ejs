@@ -1,0 +1,40 @@
+<%- include("control_header") -%>
+
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/control.css" type="text/css">
+    <link rel="stylesheet" href="../css/filters.css" type="text/css">
+    <title>Admin</title>
+    </head>
+
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation">
+            <span class="navbar-brand">Admin</span>
+            <form action="/admin_signout" method="post">
+                <div class="orange-button">
+                    <button class="btn btn-danger square-btn">Logout</button>
+                </div>
+            </form>
+        </nav>
+
+        <form action="/admin" method="post">
+            <nav class="navbar-default navbar-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav">
+                        <!-- <li class="text-center"></li> -->
+                        <li>
+                            <!--active-menu "-->
+                            <button name="control_btn" value="dashboard" type="submit">Dashboard</button>
+                        </li>
+                        <% if(role == "Admin"){ %>
+                            <li>
+                                <button name="control_btn" value="all_dev" type="submit">Add Developer</button>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
+            </nav>
+        </form>
+
+        <div id="page-wrapper">
+            <div id="page-inner">
+                

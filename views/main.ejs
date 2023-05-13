@@ -1,0 +1,118 @@
+<%- include("header") -%>
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/filters.css" type="text/css">
+
+    <title>Tickety</title>
+    </head>
+
+    <body>
+        <%- include("nav_bar") -%>
+
+
+            <div class="main-container">
+                <div class="collapsible-menu">
+                    
+                    <form action="addTicket" method="get">
+                        <input class="view-btn add-ticket-btn " type="submit" value="Submit a ticket">
+                    </form>
+
+                    <form action="filters" method="post">
+                        <input type="checkbox" id="menu">
+                        <label for="menu">Search</label>
+                        <div class="collapsible-container">
+                            <div class=" filters-container">
+
+                                <div class="block1"><span class="filter-text">Ticket title:</span> <input type="text"
+                                        class="input_field filters-input-field" name="ticket_title"></div>
+
+                                <div class="block2">
+                                    <span class="filter-text">Created:</span>
+                                    <div class="block">
+                                        <span class="filter-text" style="margin-left: 10px;font-size: 17px;">-
+                                            From:</span>
+                                        <input type="date" name="date_from"style="float: right;">
+                                    </div>
+                                    <div class="block">
+                                        <span class="filter-text" style="margin-left: 10px;font-size: 17px;">-
+                                            To:</span>
+                                        <input type="date" name="date_to"
+                                            style="float: right;">
+                                    </div>
+                                </div>
+
+                                <div class="block3">
+                                    <button class="filters_btn" name="search_btn" value="user_seach"
+                                        type="submit">Apply</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <p class="filter-message">
+                    <%= search_message %>
+                </p>
+
+                <div class="row">
+                    <% for(var i=0; i < tickets.length; i++){ %>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            <div class="panel panel-back noti-box">
+                                <div class="car-box">
+
+                                    <h3 class="text-muted" style="padding: 5px;font-weight: 600;">
+                                        <%= tickets[i].title %>
+                                    </h3>
+
+                                    <h5>
+                                        <%= tickets[i].created.toLocaleString() %>
+                                    </h5>
+                                    <hr>
+
+                                    <h4 class="text-muted car-card-text">
+                                        <%= tickets[i].msg %>
+                                    </h4>
+
+                                    <% if(tickets[i].resolved){ %>
+                                        <p class="text-muted car-card-text" style="float: right;">
+                                            <hr>
+                                            <%= tickets[i].resolved.toLocaleString() %>
+                                                <%}%>
+                                        </p>
+                                        <% if(tickets[i].status=="open" ){ %>
+                                            <h4
+                                                style="background-color: rgb(133, 0, 0);width: fit-content;color: white;padding: 5px; border-radius: 10px;">
+                                                <%= tickets[i].status %>
+                                            </h4>
+                                            <% } %>
+                                                <% if(tickets[i].status=="resolved" ){ %>
+                                                    <h4
+                                                        style="background-color: rgb(0, 133, 0);width: fit-content;color: white;padding: 5px;border-radius: 10px;">
+                                                        <%= tickets[i].status %>
+                                                    </h4>
+                                                    <% } %>
+
+                                                        <% if(tickets[i].status=="assigned" ){ %>
+                                                            <h4
+                                                                style="background-color: rgb(0, 0, 133);width: fit-content;color: white;padding: 5px;border-radius: 10px;">
+                                                                <%= tickets[i].status %>
+                                                            </h4>
+                                                            <% } %>
+
+                                                                <form action="overview" method="post">
+                                                                    <button class="view-btn" name="ticket_id_btn"
+                                                                        value="<%= tickets[i].id %>" type="submit">
+                                                                        view
+                                                                    </button>
+                                                                </form>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+
+
+
+            </div>
+
+            <%- include("footer") %>

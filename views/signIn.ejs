@@ -1,0 +1,24 @@
+<%- include("header") -%>
+
+    <link rel="stylesheet" href="../css/customer.css" type="text/css">
+    <title>Sign In</title>
+    </head>
+    <body>
+        <!-- <video autoplay muted loop>
+            <source src="../videos/bg/bmw.mp4" type="video/mp4">
+        </video> -->
+        <div class="customer-sign-container">
+            <h1>Sign In</h1>
+            <form id="form" action="/signin" method="post">
+                <p class="signinMessage"></p>
+                <input class="input_field" name="username" placeholder="E-mail" autocomplete="off" type="text" required
+                    autofocus>
+                <input class="input_field" name="password" placeholder="Password" autocomplete="off" type="password"
+                    required>
+                <br>
+                <button class="signBtn" name="btn" value="signup" type="submit">Sign in</button>
+                <p>Don't have an account? <a id="log" href="signup">SignUp</a></p>
+        </div>
+        </form>
+
+    </body>

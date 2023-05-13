@@ -1,0 +1,25 @@
+<%- include("header") -%>
+
+  <link rel="stylesheet" href="../css/customer.css" type="text/css">
+  <title>Sign Up</title>
+  </head>
+  <body>
+    <!-- <video autoplay muted loop >
+      <source src="../videos/bg/bmw.mp4" type="video/mp4">
+  </video> -->
+    <div class="customer-sign-container">
+      <h1>Sign Up</h1>
+      <form id="form" action="/signup" method="post">
+        <p class="signinMessage"></p>
+          <input class="input_field" name="name" id="name" placeholder="Name" autocomplete="off" type="text" required autofocus>
+          <input class="input_field" name="email" placeholder="E-mail" id="email" autocomplete="off" type="email" required>
+          <input class="input_field" name="password" placeholder="password" id = "password" autocomplete="off" type="password" required>
+        <br>
+        <button class="signBtn" name="btn" value="signup" type="submit">Sign up</button>
+        <p>Already have an account? <a id="log" href="signIn">SignIn</a></p>
+    </div>
+    </form>
+    <script src="../js/signUp.js"></script>
+
+
+  </body>

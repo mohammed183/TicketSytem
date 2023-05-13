@@ -1,0 +1,155 @@
+body {
+    background-color: #CBCACD;
+    background-image: url(../images/bg/bg4.png);
+}
+
+
+.main-container {
+    background-color:   #F5F5DC;
+    width: var(--WIDTH);
+    margin: 5px auto;
+    padding: 10px;
+}
+
+
+/* cards */
+
+.view-btn {
+    background-color: #516458;
+    color: white;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.add-ticket-btn{
+    width: 20%;
+    height: 45px;
+    font-size: 25px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+
+.view-btn:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+.main-footer {
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: center;
+    width: var(--WIDTH);
+    height: 80px;
+    margin: 0 auto 10px auto;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+.filters-container {
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.block {
+  height: auto;
+  margin: 15px;
+}
+.block1 {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.block2 {
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+.block3 {
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+
+
+.filters-input-field {
+    padding: 0;
+    float: right;
+    margin-right: 30px;
+    width: 50% !important;
+    font-size: 20px !important;
+}
+
+.filter-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.filters-input-field:focus {
+    border-bottom: 4px solid #0FA564;
+}
+
+.filters_btn {
+    border: none;
+    color: white;
+    font-size: 19px;
+    background-color: #516458;
+    border-radius: 10px;
+}
+
+.collapsible-container {
+    display: none;
+}
+
+.collapsible-menu label {
+    padding: 5px;
+    color: white;
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    margin-bottom: 5px;
+    width: fit-content;
+    background-color: #516458;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+input#menu {
+    display: none;
+}
+
+input:checked+label {
+    color: black;
+    background-color: #516458;
+    border: 2px solid black
+}
+
+
+input:checked~.collapsible-container {
+    display: block;
+}
+
+.filter-message {
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+}

@@ -1,0 +1,111 @@
+.collapsible-container {
+    display: none;
+}
+
+label {
+    border: none;
+    padding: 5px;
+    color: white;
+    display: block;
+    cursor: pointer;
+    font-size: 17px;
+    user-select: none;
+    margin-bottom: 10px;
+    width: fit-content;
+    background-color: #d9534f;
+    border: 2px solid #d9534f;
+
+}
+
+
+input#menu {
+    display: none;
+}
+
+input#menu2 {
+    display: none;
+}
+
+
+
+input#menu3 {
+    display: none;
+}
+
+
+
+input:checked~.collapsible-container {
+    display: block;
+    margin-bottom: 50px;
+}
+
+
+.filter-message {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+
+.filters-container {
+    width: 50%;
+    padding: 10px;
+    background-color: #d9534f;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+
+    display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+}
+
+    .block1 { grid-area: 1 / 1 / 2 / 3; }
+    .block2 { grid-area: 2 / 1 / 3 / 3; }
+    .block3 { grid-area: 3 / 1 / 4 / 3; }
+
+
+
+
+.filters-input-field {
+    padding: 0;
+    float: right;
+    margin-right: 30px;
+    width: 50% !important;
+    font-size: 15px !important;
+}
+
+.filter-text {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.filters-input-field:focus {
+    border-bottom: 2px solid #d9534f;
+}
+
+
+input:checked+label {
+    color: #d9534f;
+    background-color: white;
+    border: 2px solid #d9534f;
+}
+
+.filters_btn {
+    border: none;
+    color: white;
+    font-size: 17px;
+    background-color: #d9534f;
+}
+
+
+.search_message {
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+

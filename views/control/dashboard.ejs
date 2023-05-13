@@ -1,0 +1,107 @@
+<%- include("control", {role: role}) %>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Admin Dashboard</h2>
+            <h5>Welcome &nbsp;<%= team_mem_name %>, Glad to see you back. </h5>
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Tickets Report</h3>
+        </div>
+    </div>
+    <hr style="width: 50%; float: left; margin: 0;">
+
+    <form action="search" method="post" style="margin-top: 20px !important;">
+        <input type="checkbox" id="menu">
+        <label for="menu">Search</label>
+        <div class="collapsible-container">
+            <div class=" filters-container" style="height: 100px;">
+                <div class="block1">
+                    <span class="filter-text">Date:</span>
+                    <div>
+                        <input type="date" class="input_field filters-input-field" name="date_from">
+                        <input type="date" class="input_field filters-input-field" name="date_to">
+                    </div>
+                </div>
+                <div class="block2">
+                    <button class="filters_btn" name="search_btn" value="admin_search" type="submit">Apply</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <%= search_message %>
+    <div class="row">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <div style="overflow: scroll;height: 600px;">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="bg-color-red">
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Msg</th>
+                            <th>Cust id</th>
+                            <th>Created</th>
+                            <th>Resolved</th>
+                            <th>Status</th>
+                            <th>Assignee Id</th>
+                            <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i=0; i < tickets.length; i++){ %>
+                                <tr>
+                                    <th>
+                                        <%=tickets[i].id %>
+                                    </th>
+                                    <th>
+                                        <%=tickets[i].title %>
+                                    </th>
+                                    <th>
+                                        <%=tickets[i].msg %>
+                                    </th>
+                                    <th>
+                                        <%=tickets[i].cust_id %>
+                                    </th>
+                                    <th>
+                                        <%=(tickets[i].created).toLocaleString() %>
+                                    </th>
+                                    <th>
+                                        <% if(tickets[i].resolved){ %>
+                                            <%=tickets[i].resolved.toLocaleString() %>
+                                                <% } %>
+                                    </th>
+                                    <th>
+                                        <%=tickets[i].status %>
+                                    </th>
+                                    <th>
+                                        <% if (tickets[i].assignee) { %>
+                                            <%=tickets[i].assignee %>
+                                        <% } else { %>
+                                            Not Assigned
+                                        <% } %>
+                                    </th>
+                                    
+                                    <th>
+                                        <form action="/adminOverview" method="post">
+                                            <input class="button" type="submit" value="View">
+                                            <input type="hidden" value="<%=tickets[i].id  %>" name="ticket_id_btn">
+                                        </form>
+                                    </th>
+                                    <% } %>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+
+    <%- include("control_footer") %>

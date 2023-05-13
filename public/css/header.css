@@ -1,0 +1,94 @@
+:root {
+  --WIDTH: 90%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-header {
+  width: var(--WIDTH);
+  height: 20px;
+  margin: 0 auto;
+  background-color: black;
+  background-image: url(../images/bg/bg.png);
+}
+
+
+.navbar {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  width: var(--WIDTH);
+  height: 7vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color:  #F5F5DC;
+  user-select: none;
+}
+
+.navbar div {
+  font-size: 25px;
+}
+
+.navbar a {
+  font-size: 20px;
+  margin-right: 30px;
+  height: inherit;
+  width: fit-content;
+  background-color: inherit;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border: hidden;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.navbar a:hover {
+  cursor: pointer;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-decoration: none;
+}
+
+
+.title-btn {
+  font-size: 40px !important;
+  font-weight: 800 !important;
+}
+
+
+.profile-name{
+  font-size: 17px !important;
+  color: rgb(43, 43, 43);
+  
+}
+.profile-name:hover{
+  color: rgb(85, 85, 85) !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile a {
+  margin: 0;
+}
+
+.profile span {
+  font-size: 20px;
+}
+
+.logout-btn{
+  margin-left: 20px;
+}
+
+.hide-logout{
+  display: none !important;
+}
+

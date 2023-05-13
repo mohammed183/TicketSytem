@@ -1,0 +1,130 @@
+body {
+  background-color: #202020;
+  font-family: 'Roboto Slab', sans-serif;
+  background-image: url(../images/bg/bg.png);
+}
+
+
+.admin-sign-in-container {
+  width: 30%;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 5px;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #e5eaf5;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.admin-sign-in-container h1{
+  margin-bottom: 50px;
+}
+
+.head {
+  color: red;
+  font-size: 1.6em;
+  margin-top: 40px;
+  font-weight: 800;
+  margin-bottom: 80px;
+}
+
+
+.signBtn {
+  width: 30%;
+  border: none;
+  color: rgb(165, 0, 0);
+  padding: 10px;
+  display: block;
+  font-size: 1.3em;
+  margin-top: 20px;
+  margin-left: auto;
+  font-weight: bold;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 6px;
+  background-color: darkgrey;
+}
+
+
+button:hover {
+  cursor: pointer;
+  background-color:  #a28089;
+}
+
+
+h1 {
+  color: rgb(177, 2, 2);
+  text-align: center;
+  padding-top: 15px;
+}
+
+
+
+.input_field {
+  font-family: inherit;
+  width: 70%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.5rem;
+  padding: 5px 4px;
+  margin-bottom: 10px;
+  transition: border-color 0.2s;
+  }
+
+.input_field:focus{
+  border-bottom: 2px solid #f00;
+}
+
+p{
+  text-align: center;
+}
+
+.failed{
+  color: red;
+  font-size: 15px;
+  font-family: Monospace;
+}
+
+.error{
+  border: 2px solid red;
+}
+
+.response-container {
+  width: 30%;
+  margin: 0 auto;
+  user-select: none;
+  text-align: center;
+  background-color: white;
+
+}
+
+
+.success{
+  color: green;
+}
+.failure{
+  color: red;
+}
+
+.res-header{
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.res-btn{
+  width: 20%;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  height: fit-content;
+  text-decoration: none;
+  background-color: #202020;
+}
+.res-btn:hover{
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(224, 224, 224);
+
+}
